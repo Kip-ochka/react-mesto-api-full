@@ -1,0 +1,9 @@
+.form__button_type_auth {
+    background-color: #fff;
+    color: #000000;
+    border-radius: 2px;
+    margin: 216px 0 15px 0;
+}
+.form__button_type_auth:disabled {
+    background-color: #FFFFFF;
+}

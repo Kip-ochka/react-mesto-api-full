@@ -1,0 +1,8 @@
+.form__formfield {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 63px;
+  border: none;
+  max-width: 100%;
+}

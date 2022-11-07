@@ -1,0 +1,19 @@
+.form__input_type_auth {
+    background-color: #000;
+    border-bottom: 2px solid #CCCCCC;
+    margin: 0;
+    outline: none;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.form__input_type_auth::placeholder {
+    color: #CCCCCC;
+}
+
+.form__input_type_auth:focus {
+    border-bottom: 2px solid #ffffff;
+}
+
+
+

@@ -1,0 +1,8 @@
+.auth {
+    min-height: calc(100vh - 268px);
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 1024px){
+    .auth{min-height: calc(100vh - 186px);}
+}

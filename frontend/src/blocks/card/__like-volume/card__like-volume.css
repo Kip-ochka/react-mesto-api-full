@@ -1,0 +1,12 @@
+.card__like-volume {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+}

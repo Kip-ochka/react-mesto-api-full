@@ -1,0 +1,20 @@
+.form__input-error {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-style:  normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #f00;
+  padding: 2px 0 0;
+  margin: 0 0 0 36px;
+  max-width: 358px;
+  min-height: 30px;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  .form__input-error {
+    margin-left: 22px;
+    max-width: 238px;
+  }
+}

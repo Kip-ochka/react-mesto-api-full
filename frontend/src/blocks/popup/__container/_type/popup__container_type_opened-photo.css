@@ -1,0 +1,9 @@
+.popup__container_type_opened-photo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+  max-width: 75vw;
+  max-height: 75vh;
+}
