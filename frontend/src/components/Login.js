@@ -29,7 +29,7 @@ const Login = ({ onLogin }) => {
             className='form__input form__input_type_auth'
             placeholder='Email'
             name='email'
-            minLength='4'
+            minLength='3'
             maxLength='40'
             value={values.email || ''}
             onChange={handleChange}
