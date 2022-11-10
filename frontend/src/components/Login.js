@@ -49,7 +49,7 @@ const Login = ({ onLogin }) => {
             className='form__input form__input_type_auth'
             placeholder='Пароль'
             name='password'
-            minLength='4'
+            minLength='3'
             maxLength='40'
             value={values.password || ''}
             onChange={handleChange}
