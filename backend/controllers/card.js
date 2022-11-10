@@ -3,8 +3,14 @@ const NotFound = require('../errors/notFound');
 const BadRequest = require('../errors/badRequest');
 const Forbidden = require('../errors/forbidden');
 
+const userModelLink = [
+  { path: 'likes', model: 'user' },
+  { path: 'owner', model: 'user' },
+];
+
 module.exports.getCards = (_, res, next) => {
   Cards.find({})
+    .populate(userModelLink)
     .then((cards) => {
       res.send(cards);
     }).catch(next);
@@ -60,9 +66,11 @@ const handleLike = (req, res, next, options) => {
         req.params.cardId,
         { [action]: { likes: req.user._id } },
         { new: true },
-      ).then((updatedCard) => {
-        res.send(updatedCard);
-      });
+      )
+        .populate(userModelLink)
+        .then((updatedCard) => {
+          res.send(updatedCard);
+        });
     })
     .catch((err) => {
       if (err.name === 'CastError') {

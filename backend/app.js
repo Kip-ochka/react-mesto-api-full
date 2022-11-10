@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mestodb = require('mongoose');
 const helmet = require('helmet');
@@ -25,6 +27,11 @@ app.use(requestLogger);
 app.use(cors);
 app.use(express.json());
 app.use(cookieParser());
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 app.use(routes);
 app.use(errorLogger);
 app.use(errors());
