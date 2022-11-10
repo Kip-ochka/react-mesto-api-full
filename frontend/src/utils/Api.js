@@ -13,13 +13,13 @@ class Api {
   }
 
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, { headers: this._headers }).then(
+    return fetch(`${this._baseUrl}/users/me`, { headers: this._headers, credentials: 'include' },).then(
       this.checkResponse
     )
   }
 
   getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, { headers: this._headers }).then(
+    return fetch(`${this._baseUrl}/cards`, { headers: this._headers, credentials: 'include' }).then(
       this.checkResponse
     )
   }
@@ -31,7 +31,8 @@ class Api {
       body: JSON.stringify({
         name: userInfo.name,
         about: userInfo.about,
-      }),
+      }), 
+      credentials: 'include'
     }).then(this.checkResponse)
   }
 
@@ -40,6 +41,7 @@ class Api {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify(data),
+      credentials: 'include'
     }).then(this.checkResponse)
   }
 
@@ -47,6 +49,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: 'DELETE',
       headers: this._headers,
+      credentials: 'include'
     }).then(this.checkResponse)
   }
 
@@ -54,6 +57,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: 'PUT',
       headers: this._headers,
+      credentials: 'include'
     }).then(this.checkResponse)
   }
 
@@ -61,6 +65,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: 'DELETE',
       headers: this._headers,
+      credentials: 'include'
     }).then(this.checkResponse)
   }
 
@@ -71,6 +76,7 @@ class Api {
       body: JSON.stringify({
         avatar: data.avatar,
       }),
+      credentials: 'include'
     }).then(this.checkResponse)
   }
 
@@ -78,6 +84,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: method,
       headers: this._headers,
+      credentials: 'include'
     }).then(this.checkResponse)
   }
 
@@ -89,9 +96,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-47',
+  baseUrl: 'https://api.mesto.kip0.nomoredomains.icu',
   headers: {
-    authorization: 'fa1c93d9-5a20-441f-a3de-44abfb1a5bd7',
     'Content-Type': 'application/json',
   },
 })
